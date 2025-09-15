@@ -76,18 +76,6 @@
                     <p class="section__subtitle">Curated albums from our projects — designs, studies, and progress.</p>
                 </div>
 
-                <div class="card" style="margin-top:16px">
-                  <div class="card__content">
-                    <h3 class="card__title">Add to Catalogue</h3>
-                    <p class="text-grey-400">Upload images or PDFs to create/update albums.</p>
-                    <div class="row" style="display:flex;gap:8px;align-items:center;margin-top:8px">
-                      <input type="file" id="cat-uploader" multiple accept="image/*,.pdf" />
-                      <button class="btn btn--primary" id="cat-upload-btn">Upload</button>
-                    </div>
-                    <small class="text-grey-400">Files are uploaded immediately; you can later organize them into albums.</small>
-                  </div>
-                </div>
-                <div id="file-list" style="margin-top:16px"></div>
             </div>
         </section>
     </main>
@@ -125,29 +113,6 @@
     <!-- Scripts -->
     <script type="module" src="scripts/catalogue.js"></script>
     <script src="admin/overlay.js"></script>
-    <script>
-      (function(){
-        const btn = document.getElementById('cat-upload-btn');
-        const inp = document.getElementById('cat-uploader');
-        if(btn && inp){
-          btn.addEventListener('click', async ()=>{
-            const files = Array.from(inp.files||[]);
-            if(files.length===0){ alert('Select files first'); return; }
-            try {
-              const uploaded = [];
-              for(const f of files){
-                const fd = new FormData(); fd.append('file', f);
-                const r = await fetch('/api/upload', { method:'POST', body: fd });
-                if(!r.ok) throw new Error('upload failed');
-                const j = await r.json(); uploaded.push(j.path.replace('/public/','public/'));
-              }
-              alert('Uploaded: '+uploaded.length+' file(s). These are now available to add to albums.');
-              location.reload();
-            } catch(e){ alert('Upload failed'); }
-          });
-        }
-      })();
-    </script>
 </body>
 </html>
 
