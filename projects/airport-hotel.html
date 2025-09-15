@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Airport Hotel - DE-MAJ Architecture</title>
+    <meta name="description" content="A modern airport hotel designed for efficiency and comfort, featuring contemporary architecture that reflects the dynamic nature of air travel.">
+    <link rel="canonical" href="https://demaj-arch.com/projects/airport-hotel.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Airport Hotel - DE-MAJ Architecture">
+    <meta property="og:description" content="A modern airport hotel designed for efficiency and comfort.">
+    <meta property="og:url" content="https://demaj-arch.com/projects/airport-hotel.html">
+    <meta property="og:image" content="https://demaj-arch.com/public/projects/airport-hotel/02%20(2).jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Airport Hotel - DE-MAJ Architecture">
+    <meta name="twitter:description" content="A modern airport hotel designed for efficiency and comfort.">
+    <meta name="twitter:image" content="https://demaj-arch.com/public/projects/airport-hotel/02%20(2).jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","name":"Airport Hotel","url":"https://demaj-arch.com/projects/airport-hotel.html","image":"https://demaj-arch.com/public/projects/airport-hotel/02%20(2).jpg","description":"A modern airport hotel designed for efficiency and comfort."}</script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../public/brand/favicon.ico">
+    
+    <!-- Project Detail Script -->
+    <script type="module" src="../scripts/project-detail.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        // Enhanced mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            if (mobileToggle && mobileNav) {
+                // Enhanced mobile menu toggle
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = mobileNav.classList.contains('header__mobile-nav--open');
+                    
+                    if (isOpen) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.blur();
+                    } else {
+                        mobileNav.classList.add('header__mobile-nav--open');
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        document.body.style.overflow = 'hidden';
+                        // Focus on first menu item for accessibility
+                        const firstLink = mobileNav.querySelector('a');
+                        if (firstLink) {
+                            setTimeout(() => firstLink.focus(), 100);
+                        }
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+                const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close mobile menu when clicking the X button
+                const mobileClose = document.getElementById('mobile-close');
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.focus();
+                    }
+                });
+                
+                // Handle orientation change
+                window.addEventListener('orientationchange', function() {
+                    setTimeout(function() {
+                        if (mobileNav.classList.contains('header__mobile-nav--open')) {
+                            mobileNav.classList.remove('header__mobile-nav--open');
+                            mobileToggle.classList.remove('header__mobile-toggle--open');
+                            document.body.style.overflow = '';
+                        }
+                    }, 100);
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="../index.html" class="header__logo">
+                    <img src="../images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="120" height="40">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                        <li><a href="../about.html" class="header__nav-link">About</a></li>
+                        <li><a href="../projects/index.html" class="header__nav-link header__nav-link--active">Projects</a></li>
+                        <li><a href="../catalogue.html" class="header__nav-link">Catalogue</a></li>
+                        <li><a href="../resume.html" class="header__nav-link">Our Team</a></li>
+                        <li><a href="../contact.html" class="header__nav-link">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <button class="header__mobile-close" id="mobile-close" aria-label="Close mobile menu">×</button>
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="../index.html" class="header__mobile-nav-link">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../about.html" class="header__mobile-nav-link">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../projects/index.html" class="header__mobile-nav-link">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../catalogue.html" class="header__mobile-nav-link">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../resume.html" class="header__mobile-nav-link">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../contact.html" class="header__mobile-nav-link">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumbs -->
+        <section class="section" style="padding: 1rem 0;">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="../index.html" class="breadcrumbs__link">Home</a>
+                    <span class="breadcrumbs__item">Projects</span>
+                    <span class="breadcrumbs__item">Airport Hotel</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Project Hero -->
+        <section class="hero" style="height: 60vh; min-height: 400px;">
+            <div data-edit="image" data-target="project:airport-hotel:cover">
+                <img id="project-hero-image" src="../public/projects/airport-hotel/01 (6).jpg" alt="Airport Hotel" class="hero__background">
+            </div>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 id="project-title" class="hero__title" data-edit="text" data-target="project:airport-hotel:title">Airport Hotel</h1>
+                <div id="project-meta" class="hero__subtitle">
+                    <span id="project-year" data-edit="text" data-target="project:airport-hotel:year">2023</span> • <span id="project-category">Hotel - Leisure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section class="section">
+            <div class="container">
+                <div class="two-column">
+                    <div class="two-column__content">
+                        <div id="project-description" data-edit="text" data-target="project:airport-hotel:body">
+                            <p>This airport hotel project represents a perfect blend of functionality and aesthetic appeal, designed to serve the needs of both business and leisure travelers. The building features a contemporary design with clean lines and modern materials that create a welcoming atmosphere.</p>
+                            <p>The hotel includes 200 guest rooms, conference facilities, restaurants, and recreational areas. The design emphasizes natural light, energy efficiency, and seamless connectivity to the airport terminal.</p>
+                            <p>Key features include a dramatic glass facade that provides panoramic views of the airport operations, a rooftop terrace for relaxation, and state-of-the-art conference facilities that can accommodate both small meetings and large events.</p>
+                        </div>
+                        
+                        <div class="gallery-container">
+                            <button class="gallery-nav gallery-nav--prev" id="gallery-prev" aria-label="Previous image">
+                                <span>&larr;</span>
+                            </button>
+                            <div class="gallery" id="project-gallery">
+                            <div class="gallery__item" data-index="0">
+                                <img src="../public/projects/airport-hotel/02 (2).jpg" alt="Airport Hotel - Exterior View" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="1">
+                                <img src="../public/projects/airport-hotel/03 (2).jpg" alt="Airport Hotel - Interior Design" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="2">
+                                <img src="../public/projects/airport-hotel/04_Post (1).jpg" alt="Airport Hotel - Lobby Area" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="3">
+                                <img src="../public/projects/airport-hotel/04_Post (2).jpg" alt="Airport Hotel - Conference Facilities" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="4">
+                                <img src="../public/projects/airport-hotel/05 (2).jpg" alt="Airport Hotel - Guest Rooms" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="5">
+                                <img src="../public/projects/airport-hotel/05_Post (1).jpg" alt="Airport Hotel - Restaurant Area" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="6">
+                                <img src="../public/projects/airport-hotel/06 (2).jpg" alt="Airport Hotel - Rooftop Terrace" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            <div class="gallery__item" data-index="7">
+                                <img src="../public/projects/airport-hotel/ground floor final copy  copy.jpg" alt="Airport Hotel - Ground Floor Plan" class="gallery__image" loading="lazy">
+                                <div class="gallery__overlay">
+                                    <span class="gallery__icon">🔍</span>
+                                </div>
+                            </div>
+                            </div>
+                            <button class="gallery-nav gallery-nav--next" id="gallery-next" aria-label="Next image">
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="two-column__media">
+                        <div class="project-sidebar">
+                            <h3 class="project-sidebar__title">Project Categories</h3>
+                            <ul class="project-sidebar__list">
+                                <li class="project-sidebar__item">
+                                    <a href="../projects/index.html?category=01" class="project-sidebar__link">Master Planning</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="../projects/index.html?category=02" class="project-sidebar__link">Cultural Centers</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="../projects/index.html?category=03" class="project-sidebar__link project-sidebar__link--active">Hotels & Leisure</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="../projects/index.html?category=04" class="project-sidebar__link">Residential</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="../projects/index.html?category=06" class="project-sidebar__link">Infrastructure</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="project-sidebar__info">
+                                <h4 class="project-sidebar__info-title">Project Information</h4>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Approach:</span>
+                                    <span id="project-approach" class="project-sidebar__info-value">Modern hospitality design with focus on guest experience and operational efficiency</span>
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Year:</span>
+                                    <span id="project-year-info" class="project-sidebar__info-value">2023</span>
+                                </div>
+                                
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Project Name:</span>
+                                    <span id="project-name-info" class="project-sidebar__info-value">Airport Hotel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Navigation -->
+        <section class="section">
+            <div class="container">
+                <div class="project-nav">
+                    <a id="prev-project" href="/projects/b-k-villa.html" class="project-nav__link">
+                        <span class="project-nav__icon">&larr;</span>
+                        <span>Previous Project</span>
+                    </a>
+                    <a href="../projects/index.html" class="btn btn--outline">Back to Projects</a>
+                    <a id="next-project" href="/projects/cruise-port.html" class="project-nav__link">
+                        <span>Next Project</span>
+                        <span class="project-nav__icon">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p>Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../about.html" class="footer__link">About Us</a></li>
+                        <li><a href="../projects/index.html" class="footer__link">Projects</a></li>
+                        <li><a href="../catalogue.html" class="footer__link">Catalogue</a></li>
+                        <li><a href="../contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:mushtaqshahad59@gmail.com" class="footer__link">mushtaqshahad59@gmail.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><a href="https://wa.me/905537062864" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="https://linkedin.com/in/shahad-al-majeed" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+                <p class="dev-tag">
+                    <span>Developed by </span>
+                    <a href="#" id="fanari-contact" class="dev-link">Fanari Labs</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Image Viewer -->
+    <div id="image-viewer" class="image-viewer">
+        <div class="image-viewer__content">
+            <img id="viewer-image" class="image-viewer__image" alt="">
+            <button id="viewer-close" class="image-viewer__close">&times;</button>
+        </div>
+    </div>
+
+    <!-- Fanari Labs Contact Modal -->
+    <div id="fanari-modal" class="fanari-modal">
+        <div class="fanari-modal__content">
+            <div class="fanari-modal__header">
+                <h3>Fanari Labs</h3>
+                <button id="fanari-close" class="fanari-modal__close">&times;</button>
+            </div>
+            <div class="fanari-modal__body">
+                <p>Get in touch with us for your next project</p>
+                <div class="fanari-contact-info">
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+905379295163">+90 537 929 51 63</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://fanarilabs.com" target="_blank" rel="noopener">fanarilabs.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="../scripts/project-detail.js"></script>
+    <script>
+        // Simple navigation functionality for all pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            // Mobile menu toggle
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    const isOpen = mobileToggle.classList.contains('header__mobile-toggle--open');
+                    
+                    if (isOpen) {
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                    } else {
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        mobileNav.classList.add('header__mobile-nav--open');
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileNav && mobileToggle && 
+                    !mobileNav.contains(e.target) && 
+                    !mobileToggle.contains(e.target)) {
+                    mobileToggle.classList.remove('header__mobile-toggle--open');
+                    mobileNav.classList.remove('header__mobile-nav--open');
+                }
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            let currentImageIndex = 0;
+            let images = [];
+            
+            // Get all lightbox images
+            const lightboxImages = document.querySelectorAll('[data-lightbox]');
+            lightboxImages.forEach((img, index) => {
+                images.push({
+                    src: img.src,
+                    alt: img.alt
+                });
+            });
+            
+            // Open lightbox
+            function openLightbox(index) {
+                currentImageIndex = index;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+                lightbox.classList.add('lightbox--open');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('lightbox--open');
+                document.body.style.overflow = '';
+            }
+            
+            // Show previous image
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
+            
+            // Show next image
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
+            
+            // Add click listeners to images
+            lightboxImages.forEach((img, index) => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(index);
+                });
+            });
+            
+            // Lightbox controls
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', showPrevImage);
+            lightboxNext.addEventListener('click', showNextImage);
+            
+            // Close lightbox when clicking outside
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('lightbox--open')) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    } else if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    }
+                }
+            });
+        });
+
+        // Fanari Labs modal functionality
+        const fanariContact = document.getElementById('fanari-contact');
+        const fanariModal = document.getElementById('fanari-modal');
+        const fanariClose = document.getElementById('fanari-close');
+
+        if (fanariContact && fanariModal) {
+            fanariContact.addEventListener('click', function(e) {
+                e.preventDefault();
+                fanariModal.classList.add('fanari-modal--open');
+            });
+        }
+
+        if (fanariClose && fanariModal) {
+            fanariClose.addEventListener('click', function() {
+                fanariModal.classList.remove('fanari-modal--open');
+            });
+        }
+
+        // Close modal when clicking outside
+        if (fanariModal) {
+            fanariModal.addEventListener('click', function(e) {
+                if (e.target === fanariModal) {
+                    fanariModal.classList.remove('fanari-modal--open');
+                }
+            });
+        }
+
+        // Image viewer functionality
+        const imageViewer = document.getElementById('image-viewer');
+        const viewerImage = document.getElementById('viewer-image');
+        const viewerClose = document.getElementById('viewer-close');
+
+        if (viewerClose && imageViewer) {
+            viewerClose.addEventListener('click', function() {
+                imageViewer.classList.remove('image-viewer--open');
+            });
+        }
+
+        // Close image viewer when clicking outside
+        if (imageViewer) {
+            imageViewer.addEventListener('click', function(e) {
+                if (e.target === imageViewer) {
+                    imageViewer.classList.remove('image-viewer--open');
+                }
+            });
+        }
+    </script>
+
+    <!-- Global Image Viewer Function -->
+    <script>
+        function openImageViewer(imageSrc, imageAlt) {
+            const imageViewer = document.getElementById('image-viewer');
+            const viewerImage = document.getElementById('viewer-image');
+            
+            if (imageViewer && viewerImage) {
+                viewerImage.src = imageSrc;
+                viewerImage.alt = imageAlt;
+                imageViewer.classList.add('image-viewer--open');
+            }
+        }
+    </script>
+</body>
+</html>

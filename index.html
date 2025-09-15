@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>DE-MAJ Architecture - Shaping The Future Of Cities</title>
+    <meta name="description" content="DE-MAJ Architecture creates meaningful spaces that inspire, endure, and connect communities through thoughtful design and sustainable architecture.">
+    <link rel="canonical" href="https://demaj-arch.com/">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DE-MAJ Architecture - Shaping The Future Of Cities">
+    <meta property="og:description" content="DE-MAJ Architecture creates meaningful spaces that inspire, endure, and connect communities through thoughtful design and sustainable architecture.">
+    <meta property="og:url" content="https://demaj-arch.com/">
+    <meta property="og:image" content="https://demaj-arch.com/images/hero%20sectio%20bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DE-MAJ Architecture - Shaping The Future Of Cities">
+    <meta name="twitter:description" content="DE-MAJ Architecture creates meaningful spaces that inspire, endure, and connect communities through thoughtful design and sustainable architecture.">
+    <meta name="twitter:image" content="https://demaj-arch.com/images/hero%20sectio%20bg.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"DE-MAJ Architecture","url":"https://demaj-arch.com","logo":"https://demaj-arch.com/images/De-maj%20logo.jpg","sameAs":["https://linkedin.com/in/shahad-al-majeed","https://wa.me/905537062864"]}</script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/brand/favicon.ico">
+    
+    <!-- Translation Script -->
+    <script src="scripts/simple-translations.js"></script>
+    
+    <!-- Scroll Animations Script -->
+    <script type="module" src="scripts/scroll-animations.js"></script>
+    
+    <!-- Lightbox Script -->
+    <script type="module">
+        import { initLightboxes } from './scripts/lib/lightbox.js';
+        
+        // Initialize lightboxes when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initLightboxes();
+        });
+    </script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.querySelector('.header__mobile-nav');
+            
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('header__mobile-nav--active');
+                    mobileToggle.classList.toggle('header__mobile-toggle--active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('header__mobile-nav--active');
+                    mobileToggle.classList.remove('header__mobile-toggle--active');
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header--scrolled');
+            } else {
+                header.classList.remove('header--scrolled');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="180" height="56">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="index.html" class="header__nav-link header__nav-link--active" data-translate="nav.home">Home</a></li>
+                        <li><a href="about.html" class="header__nav-link" data-translate="nav.about">About</a></li>
+                        <li><a href="projects/index.html" class="header__nav-link" data-translate="nav.projects">Projects</a></li>
+                        <li><a href="catalogue.html" class="header__nav-link" data-translate="nav.catalogue">Catalogue</a></li>
+                        <li><a href="resume.html" class="header__nav-link" data-translate="nav.team">Our Team</a></li>
+                        <li><a href="contact.html" class="header__nav-link" data-translate="nav.connect">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Language Switcher Dropdown -->
+                <div class="language-dropdown">
+                    <button class="language-dropdown__toggle" id="language-toggle">
+                        <img src="images/Flag_of_the_United_States.svg.png" alt="Current Language" class="flag-icon" id="current-flag">
+                        <span class="language-text" id="current-lang">EN</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="language-dropdown__menu" id="language-menu">
+                        <button class="language-option" data-lang="en">
+                            <img src="images/Flag_of_the_United_States.svg.png" alt="English" class="flag-icon">
+                            <span>English</span>
+                        </button>
+                        <button class="language-option" data-lang="ar">
+                            <img src="images/Flag_of_Saudi_Arabia.svg.png" alt="العربية" class="flag-icon">
+                            <span>العربية</span>
+                        </button>
+                        <button class="language-option" data-lang="tr">
+                            <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe" class="flag-icon">
+                            <span>Türkçe</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <button class="header__mobile-close" id="mobile-close" aria-label="Close mobile menu">×</button>
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="index.html" class="header__mobile-nav-link" data-translate="nav.home">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="about.html" class="header__mobile-nav-link" data-translate="nav.about">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="projects/index.html" class="header__mobile-nav-link" data-translate="nav.projects">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="catalogue.html" class="header__mobile-nav-link" data-translate="nav.catalogue">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="resume.html" class="header__mobile-nav-link" data-translate="nav.team">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="contact.html" class="header__mobile-nav-link" data-translate="nav.connect">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/hero sectio bg.jpg" alt="Modern architecture" class="hero__background">
+            <div class="hero__overlay"></div>
+            <div class="hero__content scroll-animate">
+                <h1 class="hero__title scroll-animate--delay-1" data-translate="hero.title"></h1>
+                <p class="hero__subtitle scroll-animate--delay-2" data-translate="hero.subtitle"></p>
+                <div class="hero__actions scroll-animate--delay-3">
+                    <a href="projects/index.html" class="btn btn--primary btn--lg" data-translate="hero.viewProjects">View Projects</a>
+                    <a href="contact.html" class="btn btn--outline btn--lg" data-translate="hero.getInTouch">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section projects-section">
+            <div class="container">
+                <div class="section__header scroll-animate section--light" style="border-radius:16px; padding:24px;">
+                    <div class="section__badge scroll-animate--delay-1">
+                        <span data-translate="projects.badge">Portfolio</span>
+                    </div>
+                    <h2 class="section__title scroll-animate--delay-2" data-translate="projects.title">Our Latest Projects</h2>
+                    <p class="section__subtitle scroll-animate--delay-3" data-translate="projects.subtitle">Explore our portfolio of innovative architectural solutions across residential, commercial, and hospitality sectors</p>
+                </div>
+                
+                <div class="projects-showcase">
+                <div class="projects-grid" id="featured-projects">
+                        <!-- Projects will be loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                <div class="projects-cta scroll-animate">
+                    <a href="projects/index.html" class="btn btn--primary btn--lg modern-btn">
+                        <span data-translate="common.viewAllProjects">View All Projects</span>
+                        <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="section section--dark values-section">
+            <div class="container">
+                <div class="section__header scroll-animate section--light" style="border-radius:16px; padding:24px;">
+                    <h2 class="section__title scroll-animate--delay-1" data-translate="values.title">Our Core Values</h2>
+                    <p class="section__subtitle scroll-animate--delay-2" data-translate="values.subtitle">The principles that guide every project we undertake</p>
+                </div>
+                
+                <div class="values-grid scroll-animate">
+                    <div class="value-card scroll-animate--delay-1">
+                        <div class="value-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <path d="M19 15L20.09 18.26L24 19L20.09 19.74L19 23L17.91 19.74L14 19L17.91 18.26L19 15Z" fill="currentColor"/>
+                                <path d="M5 15L6.09 18.26L10 19L6.09 19.74L5 23L3.91 19.74L0 19L3.91 18.26L5 15Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card__title" data-translate="common.sustainability">Sustainability</h3>
+                        <p class="value-card__description" data-translate="values.sustainability">Creating environmentally responsible designs that minimize impact while maximizing efficiency and beauty.</p>
+                    </div>
+                    
+                    <div class="value-card scroll-animate--delay-2">
+                        <div class="value-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card__title" data-translate="common.context">Context</h3>
+                        <p class="value-card__description" data-translate="values.context">Understanding the unique character of each site and community to create designs that truly belong.</p>
+                    </div>
+                    
+                    <div class="value-card scroll-animate--delay-3">
+                        <div class="value-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M19.4 15A1.65 1.65 0 0 0 17 13.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M4.6 15A1.65 1.65 0 0 1 7 13.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card__title" data-translate="common.precision">Precision</h3>
+                        <p class="value-card__description" data-translate="values.precision">Attention to detail in every aspect of design, from concept to construction, ensuring excellence.</p>
+                    </div>
+                    
+                    <div class="value-card scroll-animate--delay-4">
+                        <div class="value-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card__title" data-translate="common.humanCentered">Human-Centered</h3>
+                        <p class="value-card__description" data-translate="values.humanCentered">Designing spaces that enhance human experience, comfort, and well-being above all else.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview Section -->
+        <section class="section about-preview-section">
+            <div class="container">
+                <div class="about-preview-grid">
+                    <div class="about-preview__content scroll-animate--left">
+                        
+                        <h2 class="section__title scroll-animate--delay-2" data-translate="about.title">About Us</h2>
+                        <p class="about-preview__description scroll-animate--delay-3" data-translate="about.description">With us, architecture is more than just buildings, it's about creating meaningful spaces that inspire, endure, and connect. Every project is a collaboration. We listen closely, think deeply, and design intentionally, because we believe great architecture begins with understanding.</p>
+                        
+                        <div class="about-preview__stats scroll-animate--delay-4">
+                            <div class="stat-item">
+                                <div class="stat-number">130+</div>
+                                <div class="stat-label" data-translate="about.yearsExperience">Years of Excellence</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label" data-translate="about.projectsCompleted">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label" data-translate="about.awardsWon">Awards Won</div>
+                            </div>
+                        </div>
+                        
+                        <a href="about.html" class="btn btn--primary btn--lg scroll-animate--delay-5" data-translate="common.learnMore">
+                            <span>Learn More</span>
+                            <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="about-preview__media scroll-animate--right">
+                        <div class="about-preview__image-container">
+                            <img src="images/Since we Started work in 1890.jpg" alt="DE-MAJ Architecture Heritage" class="about-preview__image">
+                            <div class="about-preview__overlay">
+                                <div class="about-preview__play-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-preview__features">
+                            <div class="feature-item scroll-animate--delay-6">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="about.sustainable">Sustainable Design</span>
+                            </div>
+                            <div class="feature-item scroll-animate--delay-7">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="about.innovative">Innovative Solutions</span>
+                            </div>
+                            <div class="feature-item scroll-animate--delay-8">
+                                <div class="feature-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>  
+                                <span data-translate="about.clientFocused">Client-Focused</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="cta-strip scroll-animate">
+                    <h2 class="cta-strip__title scroll-animate--delay-1" data-translate="cta.title">Let's build something lasting together.</h2>
+                    <p class="cta-strip__subtitle scroll-animate--delay-2" data-translate="cta.subtitle">Ready to start your next architectural project? Get in touch with our team.</p>
+                    <div class="cta-strip__actions scroll-animate--delay-3">
+                        <a href="contact.html" class="btn btn--primary btn--lg" data-translate="common.getStarted">Get Started</a>
+                        <a href="projects/index.html" class="btn btn--outline btn--lg" data-translate="common.viewOurWork">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p data-translate="common.tagline">Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title" data-translate="common.quickLinks">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html" class="footer__link" data-translate="common.aboutUs">About Us</a></li>
+                        <li><a href="projects/index.html" class="footer__link" data-translate="nav.projects">Projects</a></li>
+                        <li><a href="catalogue.html" class="footer__link" data-translate="nav.catalogue">Catalogue</a></li>
+                        <li><a href="contact.html" class="footer__link" data-translate="common.contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title" data-translate="common.contactInfo">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:mushtaqshahad59@gmail.com" class="footer__link">mushtaqshahad59@gmail.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><a href="https://wa.me/905537062864" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="https://linkedin.com/in/shahad-al-majeed" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. <span data-translate="common.allRightsReserved">All rights reserved.</span></p>
+                <p class="dev-tag">
+                    <span>Developed by </span>
+                    <a href="#" id="fanari-contact" class="dev-link">Fanari Labs</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox__content">
+            <img id="lightbox-image" class="lightbox__image" alt="">
+            <button id="lightbox-close" class="lightbox__close">&times;</button>
+            <button id="lightbox-prev" class="lightbox__nav lightbox__nav--prev">&larr;</button>
+            <button id="lightbox-next" class="lightbox__nav lightbox__nav--next">&rarr;</button>
+            <div id="lightbox-counter" class="lightbox__counter"></div>
+        </div>
+    </div>
+
+    <!-- Fanari Labs Contact Modal -->
+    <div id="fanari-modal" class="fanari-modal">
+        <div class="fanari-modal__content">
+            <div class="fanari-modal__header">
+                <h3>Fanari Labs</h3>
+                <button id="fanari-close" class="fanari-modal__close">&times;</button>
+            </div>
+            <div class="fanari-modal__body">
+                <p>Get in touch with us for your next project</p>
+                <div class="fanari-contact-info">
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <a href="tel:+905379295163">+90 537 929 51 63</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Website:</strong>
+                        <a href="https://fanarilabs.com" target="_blank" rel="noopener">fanarilabs.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/home.js"></script>
+    <script src="admin/overlay.js"></script>
+    <script>
+        // Simple navigation functionality for all pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            // Mobile menu toggle
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    const isOpen = mobileToggle.classList.contains('header__mobile-toggle--open');
+                    
+                    if (isOpen) {
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                    } else {
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        mobileNav.classList.add('header__mobile-nav--open');
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileNav && mobileToggle && 
+                    !mobileNav.contains(e.target) && 
+                    !mobileToggle.contains(e.target)) {
+                    mobileToggle.classList.remove('header__mobile-toggle--open');
+                    mobileNav.classList.remove('header__mobile-nav--open');
+                }
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            
+            let currentImageIndex = 0;
+            let images = [];
+            
+            // Get all lightbox images
+            const lightboxImages = document.querySelectorAll('[data-lightbox]');
+            lightboxImages.forEach((img, index) => {
+                images.push({
+                    src: img.src,
+                    alt: img.alt
+                });
+            });
+            
+            // Open lightbox
+            function openLightbox(index) {
+                currentImageIndex = index;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+                lightbox.classList.add('lightbox--open');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('lightbox--open');
+                document.body.style.overflow = '';
+            }
+            
+            // Show previous image
+            function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
+            
+            // Show next image
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                lightboxImage.src = images[currentImageIndex].src;
+                lightboxImage.alt = images[currentImageIndex].alt;
+                lightboxCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+            }
+            
+            // Add click listeners to images
+            lightboxImages.forEach((img, index) => {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openLightbox(index);
+                });
+            });
+            
+            // Lightbox controls
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', showPrevImage);
+            lightboxNext.addEventListener('click', showNextImage);
+            
+            // Close lightbox when clicking outside
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('lightbox--open')) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                    } else if (e.key === 'ArrowLeft') {
+                        showPrevImage();
+                    } else if (e.key === 'ArrowRight') {
+                        showNextImage();
+                    }
+                }
+            });
+        });
+
+        // Fanari Labs modal functionality
+        const fanariContact = document.getElementById('fanari-contact');
+        const fanariModal = document.getElementById('fanari-modal');
+        const fanariClose = document.getElementById('fanari-close');
+
+        if (fanariContact && fanariModal) {
+            fanariContact.addEventListener('click', function(e) {
+                e.preventDefault();
+                fanariModal.classList.add('fanari-modal--open');
+            });
+        }
+
+        if (fanariClose && fanariModal) {
+            fanariClose.addEventListener('click', function() {
+                fanariModal.classList.remove('fanari-modal--open');
+            });
+        }
+
+        // Close modal when clicking outside
+        if (fanariModal) {
+            fanariModal.addEventListener('click', function(e) {
+                if (e.target === fanariModal) {
+                    fanariModal.classList.remove('fanari-modal--open');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Catalogue - DE-MAJ Architecture</title>
+    <meta name="description" content="Browse albums and images curated by DE-MAJ Architecture.">
+    <link rel="canonical" href="https://demaj-arch.com/catalogue.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Project Catalogue - DE-MAJ Architecture">
+    <meta property="og:description" content="Explore curated albums of our ongoing and completed projects.">
+    <meta property="og:url" content="https://demaj-arch.com/catalogue.html">
+    <meta property="og:image" content="https://demaj-arch.com/images/De-maj%20logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Project Catalogue - DE-MAJ Architecture">
+    <meta name="twitter:description" content="Explore curated albums of our ongoing and completed projects.">
+    <meta name="twitter:image" content="https://demaj-arch.com/images/De-maj%20logo.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/brand/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="120" height="40">
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="index.html" class="header__nav-link">Home</a></li>
+                        <li><a href="about.html" class="header__nav-link">About</a></li>
+                        <li><a href="projects/index.html" class="header__nav-link">Projects</a></li>
+                        <li><a href="resume.html" class="header__nav-link">Our Team</a></li>
+                        <li><a href="contact.html" class="header__nav-link">Connect</a></li>
+                    </ul>
+                </nav>
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <button class="header__mobile-close" id="mobile-close" aria-label="Close mobile menu">×</button>
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item"><a href="index.html" class="header__mobile-nav-link">Home</a></li>
+                <li class="header__mobile-nav-item"><a href="about.html" class="header__mobile-nav-link">About</a></li>
+                <li class="header__mobile-nav-item"><a href="projects/index.html" class="header__mobile-nav-link">Projects</a></li>
+                <li class="header__mobile-nav-item"><a href="resume.html" class="header__mobile-nav-link">Our Team</a></li>
+                <li class="header__mobile-nav-item"><a href="contact.html" class="header__mobile-nav-link">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h1 class="section__title">Project Catalogue</h1>
+                    <p class="section__subtitle">Curated albums from our projects — designs, studies, and progress.</p>
+                </div>
+
+                <div class="card" style="margin-top:16px">
+                  <div class="card__content">
+                    <h3 class="card__title">Add to Catalogue</h3>
+                    <p class="text-grey-400">Upload images or PDFs to create/update albums.</p>
+                    <div class="row" style="display:flex;gap:8px;align-items:center;margin-top:8px">
+                      <input type="file" id="cat-uploader" multiple accept="image/*,.pdf" />
+                      <button class="btn btn--primary" id="cat-upload-btn">Upload</button>
+                    </div>
+                    <small class="text-grey-400">Files are uploaded immediately; you can later organize them into albums.</small>
+                  </div>
+                </div>
+                <div id="file-list" style="margin-top:16px"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p>Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="projects/index.html" class="footer__link">Projects</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:info@demaj-arch.com" class="footer__link">info@demaj-arch.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/catalogue.js"></script>
+    <script src="admin/overlay.js"></script>
+    <script>
+      (function(){
+        const btn = document.getElementById('cat-upload-btn');
+        const inp = document.getElementById('cat-uploader');
+        if(btn && inp){
+          btn.addEventListener('click', async ()=>{
+            const files = Array.from(inp.files||[]);
+            if(files.length===0){ alert('Select files first'); return; }
+            try {
+              const uploaded = [];
+              for(const f of files){
+                const fd = new FormData(); fd.append('file', f);
+                const r = await fetch('/api/upload', { method:'POST', body: fd });
+                if(!r.ok) throw new Error('upload failed');
+                const j = await r.json(); uploaded.push(j.path.replace('/public/','public/'));
+              }
+              alert('Uploaded: '+uploaded.length+' file(s). These are now available to add to albums.');
+              location.reload();
+            } catch(e){ alert('Upload failed'); }
+          });
+        }
+      })();
+    </script>
+</body>
+</html>
+
+

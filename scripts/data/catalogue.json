@@ -1,0 +1,47 @@
+[
+  {
+    "id": "portfolio-2024",
+    "title": "DE-MAJ Architecture Portfolio 2024",
+    "description": "Complete portfolio showcasing our latest projects and design philosophy",
+    "file": "public/catalogue/portfolio-2024.pdf",
+    "size": "15.2 MB",
+    "pages": 48,
+    "date": "2024-01-15"
+  },
+  {
+    "id": "residential-catalog",
+    "title": "Residential Design Catalog",
+    "description": "Collection of residential projects featuring modern villa and apartment designs",
+    "file": "public/catalogue/residential-catalog.pdf",
+    "size": "8.7 MB",
+    "pages": 32,
+    "date": "2023-11-20"
+  },
+  {
+    "id": "commercial-projects",
+    "title": "Commercial & Hospitality Projects",
+    "description": "Showcase of commercial buildings, hotels, and hospitality projects",
+    "file": "public/catalogue/commercial-projects.pdf",
+    "size": "12.1 MB",
+    "pages": 40,
+    "date": "2023-09-10"
+  },
+  {
+    "id": "sustainability-guide",
+    "title": "Sustainable Design Guide",
+    "description": "Our approach to sustainable architecture and green building practices",
+    "file": "public/catalogue/sustainability-guide.pdf",
+    "size": "6.3 MB",
+    "pages": 24,
+    "date": "2023-08-05"
+  },
+  {
+    "id": "company-profile",
+    "title": "Company Profile & Capabilities",
+    "description": "Overview of DE-MAJ Architecture's services, team, and design philosophy",
+    "file": "public/catalogue/company-profile.pdf",
+    "size": "4.8 MB",
+    "pages": 16,
+    "date": "2023-07-15"
+  }
+]

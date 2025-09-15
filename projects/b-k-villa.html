@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>B-K Villa - DE-MAJ Architecture</title>
+    <meta name="description" content="A luxurious residential villa designed for modern family living, featuring open spaces and seamless indoor-outdoor connections.">
+    <link rel="canonical" href="https://demaj-arch.com/projects/b-k-villa.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="B-K Villa - DE-MAJ Architecture">
+    <meta property="og:description" content="A luxurious residential villa for modern family living.">
+    <meta property="og:url" content="https://demaj-arch.com/projects/b-k-villa.html">
+    <meta property="og:image" content="https://demaj-arch.com/public/projects/b-k-villa/001.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="B-K Villa - DE-MAJ Architecture">
+    <meta name="twitter:description" content="A luxurious residential villa for modern family living.">
+    <meta name="twitter:image" content="https://demaj-arch.com/public/projects/b-k-villa/001.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Project","name":"B-K Villa","url":"https://demaj-arch.com/projects/b-k-villa.html","image":"https://demaj-arch.com/public/projects/b-k-villa/001.jpg","description":"A luxurious residential villa for modern family living."}</script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../public/brand/favicon.ico">
+    
+    <!-- Project Detail Script -->
+    <script type="module" src="../scripts/project-detail.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        // Enhanced mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            if (mobileToggle && mobileNav) {
+                // Enhanced mobile menu toggle
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = mobileNav.classList.contains('header__mobile-nav--open');
+                    
+                    if (isOpen) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.blur();
+                    } else {
+                        mobileNav.classList.add('header__mobile-nav--open');
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        document.body.style.overflow = 'hidden';
+                        // Focus on first menu item for accessibility
+                        const firstLink = mobileNav.querySelector('a');
+                        if (firstLink) {
+                            setTimeout(() => firstLink.focus(), 100);
+                        }
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+                const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close mobile menu when clicking the X button
+                mobileNav.addEventListener('click', function(e) {
+                    if (e.target === mobileNav || e.target.classList.contains('header__mobile-nav')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.focus();
+                    }
+                });
+                
+                // Handle orientation change
+                window.addEventListener('orientationchange', function() {
+                    setTimeout(function() {
+                        if (mobileNav.classList.contains('header__mobile-nav--open')) {
+                            mobileNav.classList.remove('header__mobile-nav--open');
+                            mobileToggle.classList.remove('header__mobile-toggle--open');
+                            document.body.style.overflow = '';
+                        }
+                    }, 100);
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="../index.html" class="header__logo">
+                    <img src="../images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="120" height="40">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                        <li><a href="../about.html" class="header__nav-link">About</a></li>
+                        <li><a href="../projects/index.html" class="header__nav-link header__nav-link--active">Projects</a></li>
+                        <li><a href="../catalogue.html" class="header__nav-link">Catalogue</a></li>
+                        <li><a href="../resume.html" class="header__nav-link">Our Team</a></li>
+                        <li><a href="../contact.html" class="header__nav-link">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="../index.html" class="header__mobile-nav-link">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../about.html" class="header__mobile-nav-link">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../projects/index.html" class="header__mobile-nav-link">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../catalogue.html" class="header__mobile-nav-link">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../resume.html" class="header__mobile-nav-link">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../contact.html" class="header__mobile-nav-link">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumbs -->
+        <section class="section" style="padding: 1rem 0;">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="../index.html" class="breadcrumbs__link">Home</a>
+                    <span class="breadcrumbs__item">Projects</span>
+                    <span class="breadcrumbs__item">B-K Villa</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Project Hero -->
+        <section class="hero" style="height: 60vh; min-height: 400px;">
+            <img id="project-hero-image" src="../public/projects/b-k-villa/001.jpg" alt="B-K Villa" class="hero__background">
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 id="project-title" class="hero__title">B-K Villa</h1>
+                <div id="project-meta" class="hero__subtitle">
+                    <span id="project-year">2022</span> • <span id="project-location">Jeddah, Saudi Arabia</span> • <span id="project-category">Residential</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section class="section">
+            <div class="container">
+                <div class="two-column">
+                    <div class="two-column__content">
+                        <div>
+                            <p>The B-K Villa is a contemporary residential project that redefines luxury living through thoughtful design and attention to detail. The villa features a modern architectural language with clean lines and premium materials.</p>
+                            <p>Designed for a family of five, the villa includes five bedrooms, a spacious living area, modern kitchen, and multiple outdoor spaces including a private garden and swimming pool area.</p>
+                            <p>The design emphasizes natural ventilation, abundant natural light, and privacy while maintaining a strong connection to the surrounding landscape. The use of local materials and sustainable design principles ensures the villa is both environmentally conscious and culturally appropriate.</p>
+                        </div>
+                        
+                        <div class="gallery-container">
+                            <button class="gallery-nav gallery-nav--prev" id="gallery-prev" aria-label="Previous image">
+                                <span>&larr;</span>
+                            </button>
+                            <div class="gallery" id="project-gallery"></div>
+                            <button class="gallery-nav gallery-nav--next" id="gallery-next" aria-label="Next image">
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="two-column__media">
+                        <div class="project-sidebar">
+                            <h3 class="project-sidebar__title">Sections</h3>
+                            <ul class="project-sidebar__list">
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=01" class="project-sidebar__link">01 MASTER PLANING</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=02" class="project-sidebar__link">02 SOCIAL</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=03" class="project-sidebar__link">03 HOTEL - LEISURE</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=04" class="project-sidebar__link project-sidebar__link--active">04 RESEDENTIAL</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=05" class="project-sidebar__link">05 COMMERCIAL</a>
+                                </li>
+                                <li class="project-sidebar__item">
+                                    <a href="/projects/?category=06" class="project-sidebar__link">06 TRANSPORTING</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="project-sidebar__info">
+                                <h4 class="project-sidebar__info-title">Project Information</h4>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Approach:</span>
+                                    <span id="project-approach" class="project-sidebar__info-value">Contemporary residential design with focus on family living and privacy</span>
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Year:</span>
+                                    <span id="project-year-info" class="project-sidebar__info-value">2022</span>
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Project Name:</span>
+                                    <span id="project-name-info" class="project-sidebar__info-value">B-K Villa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Navigation -->
+        <section class="section">
+            <div class="container">
+                <div class="project-nav">
+                    <a href="/projects/airport-hotel.html" class="project-nav__link">
+                        <span class="project-nav__icon">&larr;</span>
+                        <span>Previous Project</span>
+                    </a>
+                    <a href="../projects/index.html" class="btn btn--outline">Back to Projects</a>
+                    <a href="/projects/cruise-port.html" class="project-nav__link">
+                        <span>Next Project</span>
+                        <span class="project-nav__icon">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p>Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../about.html" class="footer__link">About Us</a></li>
+                        <li><a href="../projects/index.html" class="footer__link">Projects</a></li>
+                        <li><a href="../catalogue.html" class="footer__link">Catalogue</a></li>
+                        <li><a href="../contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:mushtaqshahad59@gmail.com" class="footer__link">mushtaqshahad59@gmail.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><a href="https://wa.me/905537062864" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="https://linkedin.com/in/shahad-al-majeed" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../scripts/project-detail.js"></script>
+    <script>
+        // Simple navigation functionality for all pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            // Mobile menu toggle
+            if (mobileToggle && mobileNav) {
+                mobileToggle.addEventListener('click', function() {
+                    const isOpen = mobileToggle.classList.contains('header__mobile-toggle--open');
+                    
+                    if (isOpen) {
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                    } else {
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        mobileNav.classList.add('header__mobile-nav--open');
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileNav && mobileToggle && 
+                    !mobileNav.contains(e.target) && 
+                    !mobileToggle.contains(e.target)) {
+                    mobileToggle.classList.remove('header__mobile-toggle--open');
+                    mobileNav.classList.remove('header__mobile-nav--open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

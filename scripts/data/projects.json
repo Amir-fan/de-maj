@@ -1,0 +1,151 @@
+[
+  {
+    "id": "airport-hotel",
+    "title": "Airport Hotel",
+    "slug": "airport-hotel",
+    "year": "2023",
+    "location": "",
+    "status": "completed",
+    "categoryId": "03",
+    "cover": "public/projects/airport-hotel/01 (6).jpg",
+    "gallery": [
+      "public/projects/airport-hotel/02 (2).jpg",
+      "public/projects/airport-hotel/03 (2).jpg",
+      "public/projects/airport-hotel/04_Post (1).jpg",
+      "public/projects/airport-hotel/04_Post (2).jpg",
+      "public/projects/airport-hotel/05 (2).jpg",
+      "public/projects/airport-hotel/05_Post (1).jpg",
+      "public/projects/airport-hotel/06 (2).jpg",
+      "public/projects/airport-hotel/2 nd floor final copy  copy.jpg",
+      "public/projects/airport-hotel/facades final copy  copy.jpg",
+      "public/projects/airport-hotel/first floor final copy 2.jpg",
+      "public/projects/airport-hotel/ground floor final copy  copy.jpg",
+      "public/projects/airport-hotel/sections final copy 2.jpg",
+      "public/projects/airport-hotel/Untitled-1.jpg"
+    ],
+    "short": "A modern airport hotel designed for efficiency and comfort, featuring contemporary architecture that reflects the dynamic nature of air travel.",
+    "body": "<p>This airport hotel project represents a perfect blend of functionality and aesthetic appeal, designed to serve the needs of both business and leisure travelers. The building features a contemporary design with clean lines and modern materials that create a welcoming atmosphere.</p><p>The hotel includes 200 guest rooms, conference facilities, restaurants, and recreational areas. The design emphasizes natural light, energy efficiency, and seamless connectivity to the airport terminal.</p><p>Key features include a dramatic glass facade that provides panoramic views of the airport operations, a rooftop terrace for relaxation, and state-of-the-art conference facilities that can accommodate both small meetings and large events.</p>",
+    "approach": "Modern hospitality design with focus on guest experience and operational efficiency",
+    "assets": [
+      "public/projects/airport-hotel/ground floor final copy  copy.jpg",
+      "public/projects/airport-hotel/first floor final copy 2.jpg",
+      "public/projects/airport-hotel/2 nd floor final copy  copy.jpg",
+      "public/projects/airport-hotel/sections final copy 2.jpg",
+      "public/projects/airport-hotel/facades final copy  copy.jpg"
+    ],
+    "sortOrder": 1
+  },
+  {
+    "id": "b-k-villa",
+    "title": "B-K Villa",
+    "slug": "b-k-villa",
+    "year": "2022",
+    "location": "",
+    "status": "completed",
+    "categoryId": "04",
+    "cover": "public/projects/b-k-villa/001.jpg",
+    "gallery": [
+      "public/projects/b-k-villa/002.jpg",
+      "public/projects/b-k-villa/07.jpg",
+      "public/projects/b-k-villa/1 st floor bej copy 2.jpg",
+      "public/projects/b-k-villa/6.jpg",
+      "public/projects/b-k-villa/7.jpg",
+      "public/projects/b-k-villa/9.jpg",
+      "public/projects/b-k-villa/ground floor bej copy.jpg",
+      "public/projects/b-k-villa/GROUND PLAN.jpg",
+      "public/projects/b-k-villa/ROOF PL.jpg"
+    ],
+    "short": "A luxurious residential villa designed for modern family living, featuring open spaces and seamless indoor-outdoor connections.",
+    "body": "<p>The B-K Villa is a contemporary residential project that redefines luxury living through thoughtful design and attention to detail. The villa features a modern architectural language with clean lines and premium materials.</p><p>Designed for a family of five, the villa includes five bedrooms, a spacious living area, modern kitchen, and multiple outdoor spaces including a private garden and swimming pool area.</p><p>The design emphasizes natural ventilation, abundant natural light, and privacy while maintaining a strong connection to the surrounding landscape. The use of local materials and sustainable design principles ensures the villa is both environmentally conscious and culturally appropriate.</p>",
+    "approach": "Contemporary residential design with focus on family living and privacy",
+    "assets": [
+      "public/projects/b-k-villa/GROUND PLAN.jpg",
+      "public/projects/b-k-villa/ROOF PL.jpg",
+      "public/projects/b-k-villa/ground floor bej copy.jpg",
+      "public/projects/b-k-villa/1 st floor bej copy 2.jpg"
+    ],
+    "sortOrder": 2
+  },
+  {
+    "id": "cruise-port",
+    "title": "Cruise Port Terminal",
+    "slug": "cruise-port",
+    "year": "2024",
+    "location": "",
+    "status": "ongoing",
+    "categoryId": "06",
+    "cover": "public/projects/cruise-port/ffgt.jpg",
+    "gallery": [
+      "public/projects/cruise-port/FOTTG.jpg",
+      "public/projects/cruise-port/top2.jpg",
+      "public/projects/cruise-port/we.jpg",
+      "public/projects/cruise-port/ww.jpg"
+    ],
+    "short": "A state-of-the-art cruise port terminal designed to handle large passenger volumes while providing an exceptional arrival experience.",
+    "body": "<p>This cruise port terminal project represents a significant investment in Saudi Arabia's tourism infrastructure. The terminal is designed to accommodate the largest cruise ships while providing passengers with a world-class arrival and departure experience.</p><p>The terminal features modern facilities including immigration and customs areas, retail spaces, restaurants, and passenger lounges. The design emphasizes efficiency, security, and passenger comfort while reflecting the cultural identity of the region.</p><p>Key design elements include a dramatic roof structure that provides shade and natural ventilation, clear wayfinding systems, and flexible spaces that can adapt to varying passenger volumes throughout the year.</p>",
+    "approach": "Large-scale infrastructure design with focus on passenger experience and operational efficiency",
+    "assets": [
+      "public/projects/cruise-port/ffgt.jpg",
+      "public/projects/cruise-port/FOTTG.jpg",
+      "public/projects/cruise-port/top2.jpg"
+    ],
+    "sortOrder": 3
+  },
+  {
+    "id": "cultural-center",
+    "title": "Cultural Center",
+    "slug": "cultural-center",
+    "year": "2023",
+    "location": "",
+    "status": "completed",
+    "categoryId": "02",
+    "cover": "public/projects/cultural-center/m c 10.jpg",
+    "gallery": [
+      "public/projects/cultural-center/m c 11.jpg",
+      "public/projects/cultural-center/m c 3.jpg",
+      "public/projects/cultural-center/m c 6.jpg",
+      "public/projects/cultural-center/m c 8.jpg",
+      "public/projects/cultural-center/rww.jpg"
+    ],
+    "short": "A vibrant cultural center designed to celebrate and promote local arts, music, and cultural heritage.",
+    "body": "<p>The Cultural Center is a multi-purpose facility designed to serve as a hub for artistic expression and cultural exchange. The building features flexible performance spaces, exhibition galleries, and educational facilities.</p><p>Designed to accommodate various cultural activities including concerts, art exhibitions, workshops, and community events, the center provides both intimate spaces for small gatherings and large venues for major performances.</p><p>The architecture reflects the dynamic nature of cultural expression through its fluid forms and adaptable spaces. The use of natural materials and sustainable design principles creates a welcoming environment that encourages creativity and community engagement.</p>",
+    "approach": "Cultural facility design with focus on flexibility and community engagement",
+    "assets": [
+      "public/projects/cultural-center/m c 10.jpg",
+      "public/projects/cultural-center/m c 11.jpg",
+      "public/projects/cultural-center/m c 3.jpg"
+    ],
+    "sortOrder": 4
+  },
+  {
+    "id": "m-n-hotel",
+    "title": "M-N Hotel",
+    "slug": "m-n-hotel",
+    "year": "2024",
+    "location": "",
+    "status": "ongoing",
+    "categoryId": "03",
+    "cover": "public/projects/m-n-hotel/HH.jpg",
+    "gallery": [
+      "public/projects/m-n-hotel/HH2.jpg",
+      "public/projects/m-n-hotel/HH 3.jpg",
+      "public/projects/m-n-hotel/HH 4.jpg",
+      "public/projects/m-n-hotel/HH 6.jpg",
+      "public/projects/m-n-hotel/HH 7.jpg",
+      "public/projects/m-n-hotel/HH 7_Lighting.jpg",
+      "public/projects/m-n-hotel/HH 8.jpg",
+      "public/projects/m-n-hotel/HH 8 copy.jpg",
+      "public/projects/m-n-hotel/HH 8_Lighting.jpg",
+      "public/projects/m-n-hotel/HH 9.jpg",
+      "public/projects/m-n-hotel/HH 11.jpg"
+    ],
+    "short": "A luxury hotel featuring contemporary design and premium amenities, designed to provide an exceptional guest experience.",
+    "body": "<p>The M-N Hotel represents the pinnacle of luxury hospitality design, featuring contemporary architecture and world-class amenities. The hotel is designed to cater to both business and leisure travelers seeking an exceptional experience.</p><p>Featuring 150 luxury suites and rooms, the hotel includes multiple dining venues, a spa and wellness center, conference facilities, and recreational amenities. The design emphasizes privacy, comfort, and personalized service.</p><p>Key design features include floor-to-ceiling windows with panoramic city views, premium materials and finishes throughout, and innovative lighting design that creates different moods throughout the day. The hotel's architecture makes a bold statement while providing a serene retreat from the bustling city.</p>",
+    "approach": "Luxury hospitality design with focus on guest experience and premium amenities",
+    "assets": [
+      "public/projects/m-n-hotel/HH 7_Lighting.jpg",
+      "public/projects/m-n-hotel/HH 8_Lighting.jpg"
+    ],
+    "sortOrder": 5
+  }
+]

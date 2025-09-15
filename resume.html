@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Our Team - DE-MAJ Architecture</title>
+    <meta name="description" content="Meet our team and explore resumes for three lead architects.">
+    <link rel="canonical" href="https://demaj-arch.com/resume.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Team - DE-MAJ Architecture">
+    <meta property="og:description" content="Meet our team and explore resumes for three lead architects.">
+    <meta property="og:url" content="https://demaj-arch.com/resume.html">
+    <meta property="og:image" content="https://demaj-arch.com/images/hero%20sectio%20bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Team - DE-MAJ Architecture">
+    <meta name="twitter:description" content="Meet our team and explore resumes for three lead architects.">
+    <meta name="twitter:image" content="https://demaj-arch.com/images/hero%20sectio%20bg.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/brand/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="../index.html" class="header__logo">
+                    <img src="images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="180" height="56">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                        <li><a href="../about.html" class="header__nav-link">About</a></li>
+                        <li><a href="../projects/index.html" class="header__nav-link">Projects</a></li>
+                        <li><a href="../catalogue.html" class="header__nav-link">Catalogue</a></li>
+                        <li><a href="../resume.html" class="header__nav-link header__nav-link--active">Our Team</a></li>
+                        <li><a href="../contact.html" class="header__nav-link">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <button class="header__mobile-close" id="mobile-close" aria-label="Close mobile menu">×</button>
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="../index.html" class="header__mobile-nav-link">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../about.html" class="header__mobile-nav-link">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../projects/index.html" class="header__mobile-nav-link">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../catalogue.html" class="header__mobile-nav-link">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../resume.html" class="header__mobile-nav-link">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="../contact.html" class="header__mobile-nav-link">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Team Hero Section -->
+        <section class="hero" style="height: 50vh; min-height: 300px;">
+            <img src="images/hero sectio bg.jpg" alt="Our Team" class="hero__background">
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">Our Team</h1>
+                <p class="hero__subtitle">Meet the people behind our work and download their CVs.</p>
+            </div>
+        </section>
+
+        <!-- Team Content -->
+        <section class="section team-section">
+            <div class="container">
+                <div class="team-grid" id="team-grid"></div>
+                <script>
+                  (async function(){
+                    const grid = document.getElementById('team-grid');
+                    if(!grid) return;
+                    function render(items){
+                      grid.innerHTML='';
+                      items.forEach(m=>{
+                        const card = document.createElement('div');
+                        card.className = 'team-card';
+                        const initials = (m.name||'').split(' ').map(s=>s[0]).slice(0,2).join('').toUpperCase() || 'TM';
+                        const cv = Array.isArray(m.cv)? m.cv : [];
+                        card.innerHTML = `
+                          <div class="team-card__image" data-edit="image" data-target="team:${m.id}:photo">
+                            ${m.photo ? `<img class=\"team-card__photo\" src=\"${m.photo}\" alt=\"${m.name||''}\">` : `<div class=\"team-card__placeholder\">${initials}</div>`}
+                          </div>
+                          <h2 class="team-card__name" data-edit="text" data-target="team:${m.id}:name">${m.name||''}</h2>
+                          <div class="team-card__role" data-edit="text" data-target="team:${m.id}:role">${m.role||''}</div>
+                          <p class="team-card__bio" data-edit="text" data-target="team:${m.id}:bio">${m.bio||''}</p>
+                          <div class="card__content" style="margin-top:12px; text-align:left">
+                            <h3 style="color:#fff;margin-bottom:8px">CV</h3>
+                            <ul>${cv.map((item,i)=>`<li data-edit=\"text\" data-target=\"team:${m.id}:cv\" data-cv-index=\"${i}\">${item}</li>`).join('')}</ul>
+                          </div>`;
+                        grid.appendChild(card);
+                      });
+                    }
+                    try {
+                      const isLocal = (location.hostname==='localhost'||location.hostname==='127.0.0.1');
+                      const api = isLocal ? 'http://localhost:5050' : '';
+                      const r = await fetch(api+'/api/team',{cache:'no-store'});
+                      if(r.ok){ render(await r.json()); return; }
+                    } catch{}
+                    // Fallback static
+                    try {
+                      const r2 = await fetch('scripts/data/team.json',{cache:'no-store'});
+                      if(r2.ok){ render(await r2.json()); }
+                    } catch{}
+                  })();
+                </script>
+                <script src="admin/overlay.js"></script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p>Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../about.html" class="footer__link">About Us</a></li>
+                        <li><a href="../projects/index.html" class="footer__link">Projects</a></li>
+                        <li><a href="../contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:mushtaqshahad59@gmail.com" class="footer__link">mushtaqshahad59@gmail.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><a href="https://wa.me/905537062864" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="https://linkedin.com/in/shahad-al-majeed" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/resume.js"></script>
+    <script>
+        // Enhanced mobile navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            if (mobileToggle && mobileNav) {
+                // Enhanced mobile menu toggle
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = mobileNav.classList.contains('header__mobile-nav--open');
+                    
+                    if (isOpen) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.blur();
+                    } else {
+                        mobileNav.classList.add('header__mobile-nav--open');
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        document.body.style.overflow = 'hidden';
+                        // Focus on first menu item for accessibility
+                        const firstLink = mobileNav.querySelector('a');
+                        if (firstLink) {
+                            setTimeout(() => firstLink.focus(), 100);
+                        }
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+                const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close mobile menu when clicking the X button
+                const mobileClose = document.getElementById('mobile-close');
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.focus();
+                    }
+                });
+                
+                // Handle orientation change
+                window.addEventListener('orientationchange', function() {
+                    setTimeout(function() {
+                        if (mobileNav.classList.contains('header__mobile-nav--open')) {
+                            mobileNav.classList.remove('header__mobile-nav--open');
+                            mobileToggle.classList.remove('header__mobile-toggle--open');
+                            document.body.style.overflow = '';
+                        }
+                    }, 100);
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+                    } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

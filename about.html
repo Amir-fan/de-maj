@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>About Us - DE-MAJ Architecture</title>
+    <meta name="description" content="Learn about DE-MAJ Architecture's vision, mission, and commitment to creating meaningful spaces that inspire and connect communities.">
+    <link rel="canonical" href="https://demaj-arch.com/about.html">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="DE-MAJ Architecture">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us - DE-MAJ Architecture">
+    <meta property="og:description" content="Learn about DE-MAJ Architecture's vision, mission, and commitment to creating meaningful spaces that inspire and connect communities.">
+    <meta property="og:url" content="https://demaj-arch.com/about.html">
+    <meta property="og:image" content="https://demaj-arch.com/images/Since%20we%20Started%20work%20in%201890.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - DE-MAJ Architecture">
+    <meta name="twitter:description" content="Learn about DE-MAJ Architecture's vision, mission, and commitment to creating meaningful spaces that inspire and connect communities.">
+    <meta name="twitter:image" content="https://demaj-arch.com/images/Since%20we%20Started%20work%20in%201890.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Translation Script -->
+    <script src="scripts/simple-translations.js"></script>
+    
+    <!-- Scroll Animations Script -->
+    <script type="module" src="scripts/scroll-animations.js"></script>
+    
+    <!-- Lightbox Script -->
+    <script type="module">
+        import { initLightboxes } from './scripts/lib/lightbox.js';
+        
+        // Initialize lightboxes when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initLightboxes();
+        });
+    </script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        // Enhanced mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const header = document.getElementById('header');
+            
+            if (mobileToggle && mobileNav) {
+                // Enhanced mobile menu toggle
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isOpen = mobileNav.classList.contains('header__mobile-nav--open');
+                    
+                    if (isOpen) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.blur();
+                    } else {
+                        mobileNav.classList.add('header__mobile-nav--open');
+                        mobileToggle.classList.add('header__mobile-toggle--open');
+                        document.body.style.overflow = 'hidden';
+                        // Focus on first menu item for accessibility
+                        const firstLink = mobileNav.querySelector('a');
+                        if (firstLink) {
+                            setTimeout(() => firstLink.focus(), 100);
+                        }
+                    }
+                });
+                
+                // Close mobile menu when clicking on links
+            const mobileLinks = document.querySelectorAll('.header__mobile-nav a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Close mobile menu when clicking the X button
+                const mobileClose = document.getElementById('mobile-close');
+                if (mobileClose) {
+                    mobileClose.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    });
+                }
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close mobile menu on escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                        mobileToggle.focus();
+                    }
+                });
+                
+                // Handle orientation change
+                window.addEventListener('orientationchange', function() {
+                    setTimeout(function() {
+                        if (mobileNav.classList.contains('header__mobile-nav--open')) {
+                            mobileNav.classList.remove('header__mobile-nav--open');
+                            mobileToggle.classList.remove('header__mobile-toggle--open');
+                            document.body.style.overflow = '';
+                        }
+                    }, 100);
+                });
+                
+                // Handle window resize
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileNav.classList.contains('header__mobile-nav--open')) {
+                        mobileNav.classList.remove('header__mobile-nav--open');
+                        mobileToggle.classList.remove('header__mobile-toggle--open');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        
+        // Header scroll effect
+            if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                        header.classList.add('header--solid');
+            } else {
+                        header.classList.remove('header--solid');
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="public/brand/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="index.html" class="header__logo">
+                    <img src="images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="180" height="56">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="index.html" class="header__nav-link" data-translate="nav.home">Home</a></li>
+                        <li><a href="about.html" class="header__nav-link header__nav-link--active" data-translate="nav.about">About</a></li>
+                        <li><a href="projects/index.html" class="header__nav-link" data-translate="nav.projects">Projects</a></li>
+                        <li><a href="catalogue.html" class="header__nav-link">Catalogue</a></li>
+                        <li><a href="resume.html" class="header__nav-link">Our Team</a></li>
+                        <li><a href="contact.html" class="header__nav-link" data-translate="nav.connect">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Language Switcher Dropdown -->
+                <div class="language-dropdown">
+                    <button class="language-dropdown__toggle" id="language-toggle">
+                        <img src="images/Flag_of_the_United_States.svg.png" alt="Current Language" class="flag-icon" id="current-flag">
+                        <span class="language-text" id="current-lang">EN</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="language-dropdown__menu" id="language-menu">
+                        <button class="language-option" data-lang="en">
+                            <img src="images/Flag_of_the_United_States.svg.png" alt="English" class="flag-icon">
+                            <span>English</span>
+                        </button>
+                        <button class="language-option" data-lang="ar">
+                            <img src="images/Flag_of_Saudi_Arabia.svg.png" alt="العربية" class="flag-icon">
+                            <span>العربية</span>
+                        </button>
+                        <button class="language-option" data-lang="tr">
+                            <img src="images/Flag_of_Turkey.svg.webp" alt="Türkçe" class="flag-icon">
+                            <span>Türkçe</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <button class="header__mobile-close" id="mobile-close" aria-label="Close mobile menu">×</button>
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="index.html" class="header__mobile-nav-link" data-translate="nav.home">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="about.html" class="header__mobile-nav-link" data-translate="nav.about">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="projects/index.html" class="header__mobile-nav-link" data-translate="nav.projects">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="catalogue.html" class="header__mobile-nav-link">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="resume.html" class="header__mobile-nav-link">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="contact.html" class="header__mobile-nav-link" data-translate="nav.connect">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="about-hero__background">
+                <img src="images/Since we Started work in 1890.jpg" alt="DE-MAJ Architecture Heritage" class="about-hero__image">
+                <div class="about-hero__overlay"></div>
+            </div>
+            <div class="container">
+                <div class="about-hero__content scroll-animate">
+                    
+                    <h1 class="about-hero__title scroll-animate--delay-2" data-translate="aboutPage.title">About Us</h1>
+                    <p class="about-hero__subtitle scroll-animate--delay-3" data-translate="aboutPage.subtitle">Discover our vision, values, and commitment to architectural excellence</p>
+                    <div class="about-hero__stats scroll-animate--delay-4">
+                        <div class="stat-item">
+                            <div class="stat-number">130+</div>
+                            <div class="stat-label" data-translate="about.yearsExperience">Years of Excellence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label" data-translate="about.projectsCompleted">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label" data-translate="about.awardsWon">Awards Won</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="section section--light about-story">
+            <div class="container">
+                <div class="about-story__grid">
+                    <div class="about-story__content scroll-animate--left">
+                        <div class="about-story__badge scroll-animate--delay-1">
+                            <span data-translate="aboutPage.ourStory">Our Story</span>
+                        </div>
+                        <h2 class="section__title scroll-animate--delay-2" data-translate="aboutPage.ourStory">Our Story</h2>
+                        <p class="about-story__text scroll-animate--delay-3" data-translate="aboutPage.storyText">Architecture is more than just buildings, it's about creating meaningful spaces that inspire, endure, and connect. For over 130 years, we have been committed to pushing the boundaries of architectural design while maintaining a deep respect for the communities we serve.</p>
+                        <p class="about-story__text scroll-animate--delay-4" data-translate="aboutPage.storyText2">Our work reflects our belief that great architecture has the power to transform lives and strengthen communities. We approach each project with curiosity, creativity, and a commitment to excellence that has earned us recognition in the field of sustainable and innovative design.</p>
+                        
+                        <div class="about-story__features scroll-animate--delay-5">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="about.sustainable">Sustainable Design</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="about.innovative">Innovative Solutions</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <span data-translate="about.clientFocused">Client-Focused</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-story__media scroll-animate--right">
+                        <div class="about-story__image-container">
+                            <img src="images/hero sectio bg.jpg" alt="DE-MAJ Architecture team" class="about-story__image">
+                            <div class="about-story__overlay">
+                                <div class="about-story__play-button">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                        <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission Section -->
+        <section class="section section--dark vision-mission">
+            <div class="container">
+                <div class="vision-mission__grid">
+                    <div class="vision-card scroll-animate--left">
+                        <div class="vision-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="vision-card__title" data-translate="aboutPage.ourVision">Our Vision</h3>
+                        <p class="vision-card__text" data-translate="aboutPage.visionText">We believe in the power of architecture to create positive change in our communities. Our vision is rooted in sustainability, context-sensitive design, and human-centered approaches that respect both the environment and the people who inhabit our spaces.</p>
+                    </div>
+                    
+                    <div class="mission-card scroll-animate--right">
+                        <div class="mission-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="mission-card__title" data-translate="aboutPage.ourMission">Our Mission</h3>
+                        <p class="mission-card__text" data-translate="aboutPage.missionText">Through innovation, collaboration, and a commitment to design excellence, we create buildings that not only serve their immediate purpose but contribute to a better future for generations to come.</p>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="section section--light values-detailed">
+            <div class="container">
+                <div class="section__header scroll-animate">
+                    <h2 class="section__title scroll-animate--delay-1" data-translate="aboutPage.ourValues">Our Values</h2>
+                    <p class="section__subtitle scroll-animate--delay-2" data-translate="aboutPage.valuesSubtitle">The principles that guide our work</p>
+                </div>
+                
+                <div class="values-detailed__grid scroll-animate">
+                    <div class="value-card-detailed scroll-animate--delay-1">
+                        <div class="value-card-detailed__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card-detailed__title" data-translate="common.sustainability">Sustainability</h3>
+                        <p class="value-card-detailed__description" data-translate="aboutPage.sustainabilityText">We are committed to creating environmentally responsible designs that minimize impact while maximizing efficiency and beauty.</p>
+                    </div>
+                    
+                    <div class="value-card-detailed scroll-animate--delay-2">
+                        <div class="value-card-detailed__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card-detailed__title" data-translate="common.context">Context</h3>
+                        <p class="value-card-detailed__description" data-translate="aboutPage.contextText">We understand the unique character of each site and community to create designs that truly belong.</p>
+                    </div>
+                    
+                    <div class="value-card-detailed scroll-animate--delay-3">
+                        <div class="value-card-detailed__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card-detailed__title" data-translate="common.precision">Precision</h3>
+                        <p class="value-card-detailed__description" data-translate="aboutPage.precisionText">Attention to detail in every aspect of design, from concept to construction, ensuring excellence.</p>
+                    </div>
+                    
+                    <div class="value-card-detailed scroll-animate--delay-4">
+                        <div class="value-card-detailed__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                                <path d="M20 21V19A4 4 0 0 0 16 15H8A4 4 0 0 0 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-card-detailed__title" data-translate="common.humanCentered">Human-Centered</h3>
+                        <p class="value-card-detailed__description" data-translate="aboutPage.humanCenteredText">Designing spaces that enhance human experience, comfort, and well-being above all else.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-strip scroll-animate">
+                    <h2 class="cta-strip__title scroll-animate--delay-1" data-translate="aboutPage.ctaTitle">Ready to work with us?</h2>
+                    <p class="cta-strip__subtitle scroll-animate--delay-2" data-translate="aboutPage.ctaSubtitle">Let's discuss your next architectural project</p>
+                    <div class="cta-strip__actions scroll-animate--delay-3">
+                        <a href="contact.html" class="btn btn--primary btn--lg" data-translate="common.getStarted">Get Started</a>
+                        <a href="projects/index.html" class="btn btn--outline btn--lg" data-translate="common.viewOurWork">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p data-translate="common.tagline">Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title" data-translate="common.quickLinks">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="about.html" class="footer__link" data-translate="common.aboutUs">About Us</a></li>
+                        <li><a href="projects/index.html" class="footer__link" data-translate="nav.projects">Projects</a></li>
+                        <li><a href="contact.html" class="footer__link" data-translate="common.contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title" data-translate="common.contactInfo">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:info@demaj-arch.com" class="footer__link">info@demaj-arch.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><span class="footer__text">Riyadh, Saudi Arabia</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__copyright">
+                    <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</body>
+</html>

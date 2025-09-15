@@ -1,0 +1,41 @@
+[
+  {
+    "id": "mock-1",
+    "name": "Shahad Al‑Majeed",
+    "role": "Principal Architect",
+    "photo": "",
+    "bio": "Architect and studio lead focused on sustainable, context-driven spaces.",
+    "cv": [
+      "Master of Architecture, [University]",
+      "15+ years in residential, hospitality, civic",
+      "LEED AP, member of SCE",
+      "Key projects: Airport Hotel, M‑N Hotel"
+    ]
+  },
+  {
+    "id": "mock-2",
+    "name": "Ali Karim",
+    "role": "Senior Architect",
+    "photo": "",
+    "bio": "Delivers refined plans and details, balancing vision with buildability.",
+    "cv": [
+      "B.Arch, [University]",
+      "10+ years in mixed-use and hospitality",
+      "BIM, facade systems, technical detailing",
+      "Key projects: Cultural Center, Cruise Port"
+    ]
+  },
+  {
+    "id": "mock-3",
+    "name": "Maha N.",
+    "role": "Design Lead",
+    "photo": "",
+    "bio": "Shapes concept narratives and interiors with calm, timeless palettes.",
+    "cv": [
+      "M.Arch, [University]",
+      "8+ years in interiors and residential",
+      "Material curation, lighting, user journeys",
+      "Key projects: B‑K Villa, Airport Hotel"
+    ]
+  }
+]

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Project Detail - DE-MAJ Architecture</title>
+    <meta name="description" id="page-description" content="Project detail page for DE-MAJ Architecture showcasing innovative design and sustainable architecture.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../public/brand/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__container">
+                <a href="/" class="header__logo">
+                    <img src="../images/De-maj logo.jpg" alt="DE-MAJ Architecture" width="120" height="40">
+                </a>
+                
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li><a href="/" class="header__nav-link">Home</a></li>
+                        <li><a href="/about.html" class="header__nav-link">About</a></li>
+                        <li><a href="/projects/" class="header__nav-link header__nav-link--active">Projects</a></li>
+                        <li><a href="/catalogue.html" class="header__nav-link">Catalogue</a></li>
+                        <li><a href="/resume.html" class="header__nav-link">Our Team</a></li>
+                        <li><a href="/contact.html" class="header__nav-link">Connect</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="header__mobile-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="header__mobile-nav" id="mobile-nav">
+            <ul class="header__mobile-nav-list">
+                <li class="header__mobile-nav-item">
+                    <a href="/" class="header__mobile-nav-link">Home</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="/about.html" class="header__mobile-nav-link">About</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="/projects/" class="header__mobile-nav-link">Projects</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="/catalogue.html" class="header__mobile-nav-link">Catalogue</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="/resume.html" class="header__mobile-nav-link">Our Team</a>
+                </li>
+                <li class="header__mobile-nav-item">
+                    <a href="/contact.html" class="header__mobile-nav-link">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumbs -->
+        <section class="section" style="padding: 1rem 0;">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="/" class="breadcrumbs__link">Home</a>
+                    <span class="breadcrumbs__item">Projects</span>
+                    <span class="breadcrumbs__item" id="breadcrumb-project">Project Detail</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Project Hero -->
+        <section class="hero" style="height: 60vh; min-height: 400px;">
+            <img id="project-hero-image" src="../images/hero sectio bg.jpg" alt="Project hero image" class="hero__background">
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title" id="project-title">Project Title</h1>
+                <div class="hero__subtitle" id="project-meta">
+                    <span id="project-year">2024</span> • <span id="project-location">Location</span> • <span id="project-category">Category</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Content -->
+        <section class="section">
+            <div class="container">
+                <div class="two-column">
+                    <div class="two-column__content">
+                        <div id="project-description">
+                            <!-- Project description will be loaded here -->
+                        </div>
+                        
+                        <div class="gallery" id="project-gallery">
+                            <!-- Project gallery will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <div class="two-column__media">
+                        <div class="project-sidebar">
+                            <h3 class="project-sidebar__title">Sections</h3>
+                            <ul class="project-sidebar__list" id="sections-list">
+                                <!-- Sections will be loaded here -->
+                            </ul>
+                            
+                            <div class="project-sidebar__info">
+                                <h4 class="project-sidebar__info-title">Project Information</h4>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Approach:</span>
+                                    <span class="project-sidebar__info-value" id="project-approach">-</span>
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Year:</span>
+                                    <span class="project-sidebar__info-value" id="project-year-info">-</span>
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    
+                                </div>
+                                <div class="project-sidebar__info-item">
+                                    <span class="project-sidebar__info-label">Project Name:</span>
+                                    <span class="project-sidebar__info-value" id="project-name-info">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Navigation -->
+        <section class="section">
+            <div class="container">
+                <div class="project-nav" id="project-navigation">
+                    <a href="#" class="project-nav__link project-nav__link--disabled" id="prev-project">
+                        <span class="project-nav__icon">&larr;</span>
+                        <span>Previous Project</span>
+                    </a>
+                    <a href="/projects/" class="btn btn--outline">Back to Projects</a>
+                    <a href="#" class="project-nav__link project-nav__link--disabled" id="next-project">
+                        <span>Next Project</span>
+                        <span class="project-nav__icon">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__section-title">DE-MAJ Architecture</h3>
+                    <p>Shaping The Future Of Cities through thoughtful design and sustainable architecture.</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="/about.html" class="footer__link">About Us</a></li>
+                        <li><a href="/projects/" class="footer__link">Projects</a></li>
+                        <li><a href="/catalogue.html" class="footer__link">Catalogue</a></li>
+                        <li><a href="/contact.html" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__section-title">Contact Info</h3>
+                    <ul class="footer__links">
+                        <li><a href="mailto:mushtaqshahad59@gmail.com" class="footer__link">mushtaqshahad59@gmail.com</a></li>
+                        <li><a href="tel:+905537062864" class="footer__link">+90 553 706 28 64</a></li>
+                        <li><a href="https://wa.me/905537062864" class="footer__link" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="https://linkedin.com/in/shahad-al-majeed" class="footer__link" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 DE-MAJ Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../scripts/project-detail.js"></script>
+</body>
+</html>

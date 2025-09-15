@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DE-MAJ Studio Admin</title>
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <div class="studio">
+    <header class="studio__topbar">
+      <div class="studio__brand">DE-MAJ Studio</div>
+      <div class="studio__auth">
+        <button id="pv-reload" class="btn">Reload</button>
+        <button id="pv-edit" class="btn btn--primary" title="Toggle inline edit mode">Edit Mode</button>
+        <button id="pv-save" class="btn btn--outline">Save</button>
+      </div>
+    </header>
+    <div class="studio__body">
+      <main class="studio__preview">
+        <div class="studio__preview-bar"></div>
+        <iframe id="preview" src="/index.html" class="studio__iframe"></iframe>
+      </main>
+    </div>
+  </div>
+
+  <script src="studio.js"></script>
+</body>
+</html>
+
