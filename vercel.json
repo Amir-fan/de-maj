@@ -1,9 +1,20 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/admin", "destination": "/admin/studio.html", "permanent": false }
+  "public": true,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "styles/**", "use": "@vercel/static" },
+    { "src": "scripts/**", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "projects/**", "use": "@vercel/static" },
+    { "src": "server/**", "use": "@vercel/static" },
+    { "src": "admin/**", "use": "@vercel/static" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/admin", "dest": "/admin/studio.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
 
